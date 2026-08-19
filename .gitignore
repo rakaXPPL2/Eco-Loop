@@ -1,0 +1,41 @@
+*.log
+.DS_Store
+.env
+.env.backup
+.phpactor.json
+.phpunit.result.cache
+/.codex
+/.cursor/
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/dist
+/public/build
+/public/fonts-manifest.dev.json
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+_ide_helper.php
+Homestead.json
+Homestead.yaml
+Thumbs.db
+
+# Build artifacts
+*.cache
+*.min.css
+*.min.js
+
+# Design files (optional - comment out if you want to include)
+Concept-Eco-Loop/
+UI UX Bug/
+a.out
+
+# Vercel
+.vercel
+.next

@@ -1,0 +1,82 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+build
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+tests
+phpunit.xml
+coverage
+*.lcov
+
+# Documentation
+*.md
+docs
+
+# Cache
+bootstrap/cache/*
+!bootstrap/cache/.gitignore
+storage/cache/*
+!storage/cache/.gitignore
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Database
+*.sqlite
+*.sqlite3
+!.gitignore
+
+# Composer
+composer.phar
+vendor
+
+# Node
+.npm
+.yarn
+.cache
+
+# Playwright
+.test-results
+playwright-report
+
+# Concept files
+Concept-*
+
+# Private files
+private_*
+
+# Secrets
+*.pem
+*.key
+*.crt

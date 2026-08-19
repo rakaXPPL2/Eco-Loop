@@ -1,0 +1,269 @@
+/* Landing Page Eco-Loop - Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   ROOT DESIGN TOKENS
+   ============================================ */
+:root {
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Outfit', sans-serif;
+
+  --color-forest: #1f4d2e;
+  --color-forest-deep: #152e1c;
+  --color-leaf: #3a7d4f;
+  --color-sprout: #52b788;
+  --color-sprout-light: #95d5b2;
+  --color-cream: #f5f2e8;
+  --color-cream-dark: #ede9da;
+  --color-bark: #6b5b45;
+  --color-muted: #7a8c72;
+  --color-gold: #c9a84c;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-leaf);
+  border-radius: 3px;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes float-up {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.float-anim {
+  animation: float-up 4s ease-in-out infinite;
+}
+
+.spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.count-up {
+  animation: count-up 0.6s ease-out forwards;
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border: 1px solid rgba(245, 242, 232, 0.25);
+  background: transparent;
+  color: var(--color-cream);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-dark {
+  background-color: var(--color-forest);
+  color: var(--color-cream);
+}
+
+.btn-green {
+  background-color: var(--color-sprout);
+  color: var(--color-forest-deep);
+}
+
+/* ============================================
+   CARD STYLES
+   ============================================ */
+.card-white {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 1px 12px rgba(31, 77, 46, 0.07);
+}
+
+.card-dark {
+  background-color: var(--color-forest);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.card-glass {
+  background-color: rgba(82, 183, 136, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+/* ============================================
+   BADGE STYLES
+   ============================================ */
+.badge-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: rgba(82, 183, 136, 0.15);
+  color: var(--color-sprout-light);
+  border: 1px solid rgba(82, 183, 136, 0.25);
+}
+
+.badge-dark {
+  background-color: rgba(82, 183, 136, 0.15);
+  color: var(--color-sprout-light);
+  border: 1px solid rgba(82, 183, 136, 0.25);
+}
+
+/* ============================================
+   SECTION SPACING
+   ============================================ */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.section-padding-lg {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+/* ============================================
+   TEXT UTILITIES
+   ============================================ */
+.text-forest { color: var(--color-forest); }
+.text-forest-deep { color: var(--color-forest-deep); }
+.text-leaf { color: var(--color-leaf); }
+.text-sprout { color: var(--color-sprout); }
+.text-sprout-light { color: var(--color-sprout-light); }
+.text-cream { color: var(--color-cream); }
+.text-cream-muted { color: rgba(245, 242, 232, 0.65); }
+.text-bark { color: var(--color-bark); }
+.text-muted { color: var(--color-muted); }
+.text-gold { color: var(--color-gold); }
+
+.bg-forest { background-color: var(--color-forest); }
+.bg-forest-deep { background-color: var(--color-forest-deep); }
+.bg-cream { background-color: var(--color-cream); }
+.bg-sprout { background-color: var(--color-sprout); }
+
+/* ============================================
+   INPUT STYLES
+   ============================================ */
+.input-dark {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-cream);
+  border: 1px solid rgba(245, 242, 232, 0.15);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-dark:focus {
+  border-color: var(--color-sprout);
+}
+
+.input-dark::placeholder {
+  color: rgba(245, 242, 232, 0.5);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer-link {
+  color: rgba(245, 242, 232, 0.5);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: opacity 0.2s;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .section-padding-lg {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
