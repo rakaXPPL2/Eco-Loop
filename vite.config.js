@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
-import path from 'path';
 
 export default defineConfig({
     base: '/',
@@ -12,34 +11,26 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/landing.jsx'
             ],
-            refresh: true,
+            refresh: [
+                'resources/views/**/*.blade.php',
+                'resources/js/**/*.jsx',
+            ],
         }),
         react(),
     ],
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './resources/js'),
-        },
-    },
     build: {
         outDir: 'dist',
-        assetsDir: 'assets',
-        sourcemap: false,
+        emptyOutDir: true,
         rollupOptions: {
             output: {
-                manualChunks: {
-                    'react-vendor': ['react', 'react-dom'],
-                    'three-vendor': ['three', '@react-three/fiber', 'ogl'],
-                    'alpine-vendor': ['alpinejs'],
-                },
+                assetFileNames: 'assets/[name]-[hash][extname]',
+                chunkFileNames: 'assets/[name]-[hash].js',
+                entryFileNames: 'assets/[name]-[hash].js',
             },
         },
     },
     server: {
         host: '127.0.0.1',
         port: 5173,
-    },
-    optimizeDeps: {
-        include: ['react', 'react-dom', 'three', '@react-three/fiber', 'ogl', 'alpinejs'],
     },
 });

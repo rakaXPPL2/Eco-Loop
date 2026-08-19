@@ -7,6 +7,7 @@ build
 
 # Environment files
 .env
+.env.backup
 .env.local
 .env.production
 .env.*.local
@@ -28,14 +29,11 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # Testing
 tests
 phpunit.xml
 coverage
-*.lcov
 
 # Documentation
 *.md
@@ -50,15 +48,12 @@ storage/cache/*
 # Temporary files
 *.tmp
 *.temp
-*.bak
 
 # Database
 *.sqlite
 *.sqlite3
-!.gitignore
 
 # Composer
-composer.phar
 vendor
 
 # Node
@@ -66,12 +61,9 @@ vendor
 .yarn
 .cache
 
-# Playwright
-.test-results
-playwright-report
-
 # Concept files
 Concept-*
+UI\ UX\ Bug/
 
 # Private files
 private_*
@@ -80,3 +72,7 @@ private_*
 *.pem
 *.key
 *.crt
+
+# Vercel specific
+.vercel
+.next

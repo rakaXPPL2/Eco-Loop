@@ -1,75 +1,25 @@
 {
     "version": 2,
     "framework": null,
-    "buildCommand": "npm run build",
+    "buildCommand": "npm install && npm run build",
     "outputDirectory": "dist",
     "installCommand": "npm install",
-    "devCommand": "npm run dev",
     "regions": ["sin1"],
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.3.1"
+        }
+    },
     "routes": [
         {
             "src": "/build/assets/(.*)",
             "headers": {
                 "Cache-Control": "public, max-age=31536000, immutable"
-            },
-            "continue": true
-        },
-        {
-            "src": "/(css|js|images|favicon.ico)/(.*)",
-            "dest": "/$1/$2"
+            }
         },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
-        }
-    ],
-    "env": {
-        "APP_ENV": "production",
-        "APP_DEBUG": "false",
-        "NODE_ENV": "production"
-    },
-    "headers": [
-        {
-            "source": "/build/assets/(.*)",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=31536000, immutable"
-                },
-                {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
-                },
-                {
-                    "key": "X-Frame-Options",
-                    "value": "SAMEORIGIN"
-                },
-                {
-                    "key": "X-XSS-Protection",
-                    "value": "1; mode=block"
-                }
-            ]
-        },
-        {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
-                },
-                {
-                    "key": "X-Frame-Options",
-                    "value": "SAMEORIGIN"
-                },
-                {
-                    "key": "X-XSS-Protection",
-                    "value": "1; mode=block"
-                },
-                {
-                    "key": "Referrer-Policy",
-                    "value": "strict-origin-when-cross-origin"
-                }
-            ]
         }
     ]
 }
