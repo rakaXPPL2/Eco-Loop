@@ -5,11 +5,6 @@
     "outputDirectory": "dist",
     "installCommand": "npm install",
     "regions": ["sin1"],
-    "functions": {
-        "api/index.php": {
-            "runtime": "vercel-php@0.5.2"
-        }
-    },
     "routes": [
         {
             "src": "/build/assets/(.*)",
@@ -19,7 +14,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "/api/index.php"
+            "dest": "/index.php"
         }
     ]
 }
