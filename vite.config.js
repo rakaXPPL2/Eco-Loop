@@ -16,11 +16,11 @@ export default defineConfig({
         react(),
     ],
     build: {
-        // Output the built index.html to `public/` and place assets under `public/build`
-        outDir: 'public',
-        assetsDir: 'build',
+        // Output to `dist/` and place built assets under `dist/assets`
+        outDir: 'dist',
+        assetsDir: 'assets',
         manifest: true,
-        // Ensure HTML entry is used so Vite outputs `public/index.html` with correct hashed asset paths
+        // Use HTML entry so Vite outputs `dist/index.html` with correct hashed asset paths
         rollupOptions: {
             input: 'index.html'
         }
