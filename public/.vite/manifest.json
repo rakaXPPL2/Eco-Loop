@@ -1,0 +1,11 @@
+{
+  "index.html": {
+    "file": "build/index-B7iyjdSk.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "css": [
+      "build/index-BfPnVdD2.css"
+    ]
+  }
+}

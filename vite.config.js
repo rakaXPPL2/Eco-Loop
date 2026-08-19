@@ -3,7 +3,6 @@ import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-    base: '/',
     plugins: [
         laravel({
             input: [
@@ -15,16 +14,6 @@ export default defineConfig({
         }),
         react(),
     ],
-    build: {
-        // Output to `dist/` and place built assets under `dist/assets`
-        outDir: 'dist',
-        assetsDir: 'assets',
-        manifest: true,
-        // Use HTML entry so Vite outputs `dist/index.html` with correct hashed asset paths
-        rollupOptions: {
-            input: 'index.html'
-        }
-    },
     server: {
         host: '127.0.0.1',
         port: 5173,
