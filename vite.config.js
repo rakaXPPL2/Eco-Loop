@@ -20,10 +20,9 @@ export default defineConfig({
         outDir: 'public',
         assetsDir: 'build',
         manifest: true,
+        // Ensure HTML entry is used so Vite outputs `public/index.html` with correct hashed asset paths
         rollupOptions: {
-            input: {
-                main: 'resources/js/landing.jsx'
-            }
+            input: 'index.html'
         }
     },
     server: {
